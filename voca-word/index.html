@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+</head>
+
+<style type="text/css">
+    .passer{
+    background: lightpink;
+    }
+    .valider{
+    background: lightgreen;}
+   </style>
+
+<script type="text/javascript">
+
+function newQ(){
+	window.iNum = 1+ getRandomInt(124) ;
+	document.getElementById ("Q").textContent=window.tbAnglais[iNum] ;
+	document.getElementById ("R").value="" ;
+	document.getElementById ("msg").textContent="" ;
+	document.getElementById ("text01").value=document.getElementById ("text01").value + " / "+iNum ;
+	document.getElementById ("P").disabled = false ;
+	document.getElementById ("P2").disabled = false ;
+
+}
+
+function passer(){
+    document.getElementById ("msg").textContent=window.tbFrancais[iNum] ;
+    document.getElementById ("P").disabled = true ;
+      document.getElementById ("P2").disabled = true ;
+    setTimeout(newQ, 2000);
+}
+
+function passer2(){
+    document.getElementById ("msg").textContent=window.tbFrancais[iNum] ;
+    document.getElementById ("P2").disabled = true ;
+      document.getElementById ("P").disabled = true ;
+    setTimeout(newQ, 10000);
+}
+
+
+function valider(){
+	var t= document.getElementById ("R").value ;
+	if ( t.toUpperCase() == (window.tbFrancais[iNum]).toUpperCase() ){
+		document.getElementById ("msg").textContent="BRAVO" ;
+	    setTimeout(newQ, 2000);
+	} else{
+		document.getElementById ("R").value="" ;
+		document.getElementById ("msg").textContent="ERREUR" ;
+	}
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+
+function initTableau() {
+window.tbAnglais=[''] ;
+window.tbFrancais=[''] ;
+
+window.tbAnglais[1]='a bitter pill';
+window.tbAnglais[2]='a little bird told me';
+window.tbAnglais[3]='a pain in the neck / in the ass';
+window.tbAnglais[4]='a piece of cake';
+window.tbAnglais[5]='accomodation';
+window.tbAnglais[6]='accurate';
+window.tbAnglais[7]='Achilles"heel';
+window.tbAnglais[8]='add insult to injury';
+window.tbAnglais[9]='all ears';
+window.tbAnglais[10]='and pigs can fly';
+window.tbAnglais[11]='ankle';
+window.tbAnglais[12]='arm';
+window.tbAnglais[13]='as good as gold';
+window.tbAnglais[14]='bang for the buck';
+window.tbAnglais[15]='beneath ';
+window.tbAnglais[16]='bewildering';
+window.tbAnglais[17]='blur';
+window.tbAnglais[18]='Bob"s your uncle';
+window.tbAnglais[19]='bold';
+window.tbAnglais[20]='burndown';
+window.tbAnglais[21]='came across';
+window.tbAnglais[22]='coach';
+window.tbAnglais[23]='collapse';
+window.tbAnglais[24]='cost an arm and a leg';
+window.tbAnglais[25]='cross one"s fingers';
+window.tbAnglais[26]='demise';
+window.tbAnglais[27]='don"t judge a book by its cover';
+window.tbAnglais[28]='drive you crazy';
+window.tbAnglais[29]='drown';
+window.tbAnglais[30]='every cloud has a silver lining';
+window.tbAnglais[31]='facility';
+window.tbAnglais[32]='feel under the weather';
+window.tbAnglais[33]='fierce';
+window.tbAnglais[34]='First name ';
+window.tbAnglais[35]='fledgling';
+window.tbAnglais[36]='foresaw';
+window.tbAnglais[37]='foster';
+window.tbAnglais[38]='from A to Z';
+window.tbAnglais[39]='goddamn';
+window.tbAnglais[40]='gross';
+window.tbAnglais[41]='growth';
+window.tbAnglais[42]='have a lot on your plate';
+window.tbAnglais[43]='huddled';
+window.tbAnglais[44]='icing on the cake';
+window.tbAnglais[45]='in a nutshell';
+window.tbAnglais[46]='in the black';
+window.tbAnglais[47]='in the red';
+window.tbAnglais[48]='insight';
+window.tbAnglais[49]='irrespective';
+window.tbAnglais[50]='isolation';
+window.tbAnglais[51]='it is a piece of cake';
+window.tbAnglais[52]='it s raining cats and dogs';
+window.tbAnglais[53]='it"s not my cup of tea';
+window.tbAnglais[54]='kidney';
+window.tbAnglais[55]='';
+window.tbAnglais[56]='kill two birds with one stone.';
+window.tbAnglais[57]='let the cat out of the bag';
+window.tbAnglais[58]='like taking candy off a baby';
+window.tbAnglais[59]='mourn';
+window.tbAnglais[60]='on the back burner';
+window.tbAnglais[61]='people person';
+window.tbAnglais[62]='phrase';
+window.tbAnglais[63]='play it by ear';
+window.tbAnglais[64]='plummet';
+window.tbAnglais[65]='proud as a peacock';
+window.tbAnglais[66]='put all your eggs in one basket';
+window.tbAnglais[67]='put off';
+window.tbAnglais[68]='put the cart before the horse';
+window.tbAnglais[69]='put the cat among the pigeons';
+window.tbAnglais[70]='readiness';
+window.tbAnglais[71]='reckless';
+window.tbAnglais[72]='reliable';
+window.tbAnglais[73]='selling like hotcakes';
+window.tbAnglais[74]='settle';
+window.tbAnglais[75]='sleep with the fishes';
+window.tbAnglais[76]='smash';
+window.tbAnglais[77]='spill the beans';
+window.tbAnglais[78]='spree';
+window.tbAnglais[79]='squabble';
+window.tbAnglais[80]='SSO';
+window.tbAnglais[81]='stabbed';
+window.tbAnglais[82]='stash';
+window.tbAnglais[83]='steady';
+window.tbAnglais[84]='stealth';
+window.tbAnglais[85]='steering';
+window.tbAnglais[86]='stockade';
+window.tbAnglais[87]='strain';
+window.tbAnglais[88]='stuck';
+window.tbAnglais[89]='swarm';
+window.tbAnglais[90]='take off';
+window.tbAnglais[91]='test the waters';
+window.tbAnglais[92]='the apple of my eye';
+window.tbAnglais[93]='';
+window.tbAnglais[94]='think outside the box';
+window.tbAnglais[95]='tick headed';
+window.tbAnglais[96]='tightly';
+window.tbAnglais[97]='to abuse';
+window.tbAnglais[98]='to accomodate';
+window.tbAnglais[99]='to be in a pickle / a bit of a pickle';
+window.tbAnglais[100]='to beat around the bush';
+window.tbAnglais[101]='to bite off more than you can chew';
+window.tbAnglais[102]='to butter someone up';
+window.tbAnglais[103]='to catch somebody red-handed';
+window.tbAnglais[104]='to do something for Britain';
+window.tbAnglais[105]='to eat like a horse';
+window.tbAnglais[106]='to get something off your chest';
+window.tbAnglais[107]='to go over your head';
+window.tbAnglais[108]='to have a frog in one"s throat';
+window.tbAnglais[109]='to have cold feet';
+window.tbAnglais[110]='to keep an eye on something';
+window.tbAnglais[111]='to pretend';
+window.tbAnglais[112]='to prevent';
+window.tbAnglais[113]='tumblers';
+window.tbAnglais[114]='utmost';
+window.tbAnglais[115]='weathly';
+window.tbAnglais[116]='whish ';
+window.tbAnglais[117]='whistle';
+window.tbAnglais[118]='win-win situation';
+window.tbAnglais[119]='wise';
+window.tbAnglais[120]='withstand';
+window.tbAnglais[121]='work one"s fingers to the bone';
+window.tbAnglais[122]='worthy';
+window.tbAnglais[123]='wrarth';
+window.tbAnglais[124]='yet';
+
+// ///////////////////////////////////////////////////
+
+window.tbFrancais[1]='un truc dur à avaler (au sens figuré)';
+window.tbFrancais[2]='mon petit doigt m a dit / j ai entendu dire';
+window.tbFrancais[3]='pénible, ennuyeux (quelqu un ou quelque chose)';
+window.tbFrancais[4]='quelque chose de très facile';
+window.tbFrancais[5]='logement';
+window.tbFrancais[6]='fidele,  précis';
+window.tbFrancais[7]='un talon d"Achille, une faiblesse';
+window.tbFrancais[8]='aggraver une situation';
+window.tbFrancais[9]='tout ouïe, écouter attentivement';
+window.tbFrancais[10]='quand les poules auront des dents';
+window.tbFrancais[11]='cheville';
+window.tbFrancais[12]='bras';
+window.tbFrancais[13]='adorable, bien élevé';
+window.tbFrancais[14]='tirer le maximum de profit';
+window.tbFrancais[15]=': dessous / indigne de';
+window.tbFrancais[16]=': déconcerter';
+window.tbFrancais[17]=': brouiller tâche, bavure';
+window.tbFrancais[18]='tout va bien, tout va bien se passer';
+window.tbFrancais[19]='audacieux';
+window.tbFrancais[20]=': incendier, brûler';
+window.tbFrancais[21]='rencontrer, tomber sur';
+window.tbFrancais[22]='autocar';
+window.tbFrancais[23]='effondrer se plier';
+window.tbFrancais[24]='quelque chose de cher, coûter un bras';
+window.tbFrancais[25]='croiser les doigts';
+window.tbFrancais[26]='disparition';
+window.tbFrancais[27]='ne pas se fier aux apparences';
+window.tbFrancais[28]='rendre fou';
+window.tbFrancais[29]='noyer';
+window.tbFrancais[30]='il y a toujours du positif dans une situation négative';
+window.tbFrancais[31]='établissement,  aptitude';
+window.tbFrancais[32]='ne pas se sentir bien, être malade';
+window.tbFrancais[33]=': féroce, intense';
+window.tbFrancais[34]='prénom';
+window.tbFrancais[35]=': Naissant, Oisillon';
+window.tbFrancais[36]=': prévoir';
+window.tbFrancais[37]='favoriser';
+window.tbFrancais[38]='de A à Z, en entier';
+window.tbFrancais[39]=': maudit, satané, putain de';
+window.tbFrancais[40]='flagrand grossier';
+window.tbFrancais[41]='croissance';
+window.tbFrancais[42]='avoir beaucoup de responsabilités';
+window.tbFrancais[43]='blotti se rassembler';
+window.tbFrancais[44]='la cerise sur le gâteau';
+window.tbFrancais[45]='très simplement, clairement';
+window.tbFrancais[46]='profit, bonnes finances';
+window.tbFrancais[47]='dans le rouge, finances négatives';
+window.tbFrancais[48]='perspicacité, l"idée';
+window.tbFrancais[49]='quel que soit';
+window.tbFrancais[50]='isolement';
+window.tbFrancais[51]='c est facile, simple';
+window.tbFrancais[52]='il pleut des cordes';
+window.tbFrancais[53]='ce n est pas ma tasse de thé, ce n"est pas mon truc';
+window.tbFrancais[54]='rein';
+window.tbFrancais[55]='faire d"une pierre deux coups';
+window.tbFrancais[56]='faire d une pierre, deux coups';
+window.tbFrancais[57]='révéler un secret';
+window.tbFrancais[58]='très facile à faire';
+window.tbFrancais[59]='faire le deuil';
+window.tbFrancais[60]='non prioritaire, qui peut attendre';
+window.tbFrancais[61]='personne extravertie';
+window.tbFrancais[62]='expression, locution';
+window.tbFrancais[63]='avancer à l aveuglette, au hasard, improviser';
+window.tbFrancais[64]='Descendre brusquement, le plomb';
+window.tbFrancais[65]='fier comme un paon / coq';
+window.tbFrancais[66]='mettre tous ses oeufs dans le même panier';
+window.tbFrancais[67]='remettre au lendemain, procrastiner';
+window.tbFrancais[68]='mettre la charrue avant les boeufs';
+window.tbFrancais[69]='créer des problèmes';
+window.tbFrancais[70]='préparation, bonne volonté';
+window.tbFrancais[71]=': téméraire';
+window.tbFrancais[72]=': fiable';
+window.tbFrancais[73]='se vendre comme des petits pains / très bien se vendre';
+window.tbFrancais[74]='regler resoudre';
+window.tbFrancais[75]='mourir';
+window.tbFrancais[76]='fracasser la colision';
+window.tbFrancais[77]='vendre la mèche';
+window.tbFrancais[78]='la rejouissance, faire la fete';
+window.tbFrancais[79]='querelle';
+window.tbFrancais[80]='Single Sign On';
+window.tbFrancais[81]='poignarder frapper';
+window.tbFrancais[82]='planquer';
+window.tbFrancais[83]='stable regulier';
+window.tbFrancais[84]='fautif';
+window.tbFrancais[85]='pilotage conduite';
+window.tbFrancais[86]=': palissade, prison militaire';
+window.tbFrancais[87]='souche tension';
+window.tbFrancais[88]='coince';
+window.tbFrancais[89]='essaim, le grouillement';
+window.tbFrancais[90]='augmenter';
+window.tbFrancais[91]='tâter le terrain';
+window.tbFrancais[92]='la prunelle de mes yeux';
+window.tbFrancais[93]='la prunelle de mes yeux';
+window.tbFrancais[94]='penser différemment, être créatif';
+window.tbFrancais[95]='tetu';
+window.tbFrancais[96]='fermement';
+window.tbFrancais[97]='insulter';
+window.tbFrancais[98]='se loger';
+window.tbFrancais[99]='avoir un problème (pas très grave)';
+window.tbFrancais[100]='tourner autour du pot, contourner un sujet';
+window.tbFrancais[101]='avoir les yeux plus gros que le ventre : mais pas seulement pour l"alimentation';
+window.tbFrancais[102]='passer de la pommade, faire quelque chose pour obtenir les faveurs de quelqu"un';
+window.tbFrancais[103]='prendre quelqu"un la main dans le sac';
+window.tbFrancais[104]='faire une chose à fond, s"investir';
+window.tbFrancais[105]='manger comme un ogre';
+window.tbFrancais[106]='se soulager de quelque chose en parlant';
+window.tbFrancais[107]='ne pas comprendre quelque chose';
+window.tbFrancais[108]='avoir un chat dans la gorge';
+window.tbFrancais[109]='être inquiet, angoissé, regretter';
+window.tbFrancais[110]='surveiller, garder un oeil sur quelque chose';
+window.tbFrancais[111]='faire semblant';
+window.tbFrancais[112]='empêcher';
+window.tbFrancais[113]=': gobelets';
+window.tbFrancais[114]='maximum, extreme';
+window.tbFrancais[115]='riche';
+window.tbFrancais[116]=': souhait';
+window.tbFrancais[117]='sifflet';
+window.tbFrancais[118]='situation gagnant-gagnant, bénéfique à tout le monde';
+window.tbFrancais[119]='sage prudent';
+window.tbFrancais[120]='resister soutenir';
+window.tbFrancais[121]='travailler d arrache-pieds';
+window.tbFrancais[122]='digne notable';
+window.tbFrancais[123]='colere';
+window.tbFrancais[124]='alors encore toujours';
+}
+
+</script>
+<body>
+<!-- // ; display: none; -->
+<button id="msg" style="display: block ;" > mon msh </button>
+
+<br/>
+<br/>
+
+
+<!-- // blanc insecable  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<label >      </label>
+<label id="Q"></label>
+<br/>
+<label >      </label><input id="R" type="text" name="reponse">
+<br/>
+<br/>
+
+<!-- // blanc insecable  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<label >      </label>
+
+<input id="P" class="passer" type="submit" value="Passer" name="passer" onClick="passer()"></input>
+<input id="P2" class="passer" type="submit" value="Passer (10s)" name="passer" onClick="passer2()"></input>
+<input id ="V" class="valider" type="submit" value="Valider" name="valider" onClick="valider()"></input>
+
+<br/>
+<br/>
+
+<textarea id="text01" rows="10">
+
+</textarea>
+
+
+<script>
+		initTableau();
+		document.getElementById ("text01").value=document.cookie  ;
+		document.cookie ="para01=02" ;
+		(function() {
+			newQ() ;
+		})() ;
+	</script>
+</body>
